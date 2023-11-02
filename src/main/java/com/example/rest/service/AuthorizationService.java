@@ -5,15 +5,15 @@ import com.example.rest.exception.UnauthorizedUser;
 import com.example.rest.model.Authorities;
 import com.example.rest.model.User;
 import com.example.rest.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class AuthorizationService {
-    @Autowired
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public List<Authorities> getAuthorities(User user) {
         if (isEmpty(user.getUser()) || isEmpty(user.getPassword())) {

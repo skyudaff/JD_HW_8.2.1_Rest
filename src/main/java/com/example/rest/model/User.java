@@ -1,8 +1,8 @@
 package com.example.rest.model;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 
 import java.util.Objects;
@@ -10,10 +10,10 @@ import java.util.Objects;
 @Getter
 @Setter
 public class User {
-    @NonNull
+    @NotBlank
     @Size(min = 3, max = 20)
     private String user;
-    @NonNull
+    @NotBlank
     @Size(min = 5, max = 20)
     private String password;
 
